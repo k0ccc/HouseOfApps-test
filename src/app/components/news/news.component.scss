@@ -1,0 +1,40 @@
+button.nav-button{
+    margin-left: 98%;
+}
+nav{
+    ul {
+        overflow: hidden;
+        list-style-type: none;
+        padding: 0;
+        top: 0;
+        margin: 0;
+        width: 100%;
+        background-color: black;
+      }
+      li{
+        margin-top: 10px;
+        margin-bottom: 10px;
+}   }
+
+div.main{
+    margin-top: 60px ;
+    margin-left: 25%;
+}
+input.filter{
+    margin-top: 0%;
+    // margin-right: 25%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    padding-right: 58%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-size: 20px;
+}
+div.card-post{
+    word-wrap: break-word; 
+    margin-top: 0%;
+    margin-right: 25%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
