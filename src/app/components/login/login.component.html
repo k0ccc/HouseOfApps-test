@@ -1,6 +1,6 @@
 <div class="centerCard">
     <input placeholder="Login" type="login" [(ngModel)]='login'>
     <input class="pass" placeholder="Password" type="password" [(ngModel)]='password'>
-    <button class="submit" type="button" (click)="loginSubmit()">ВОЙТИ</button>
+    <button mat-raised-button (click)="loginSubmit()" class="submit">ВОЙТИ</button>
     <small *ngIf="loginError">Имя пользователя или пароль введены не верно</small>
 </div>

@@ -6,7 +6,7 @@ export interface Post {
   id: number;
   title: string;
   body: string;
-  userId: string;
+  userId: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -24,14 +24,13 @@ export class PostsService {
     );
   }
   patchPost(
-    idPost: number,
-    id?: number,
+    id: number,
     title?: string,
     body?: string,
-    userId?: string
+    userId?: number
   ) {
     return this.httpClient.patch(
-      'http://jsonplaceholder.typicode.com/posts/' + idPost,
+      'http://jsonplaceholder.typicode.com/posts/' + id,
       {
         id: id,
         title: title,
@@ -40,9 +39,9 @@ export class PostsService {
       }
     );
   }
-  deletePost(idPost:number){
+  deletePost(idPost: number) {
     return this.httpClient.delete(
       'http://jsonplaceholder.typicode.com/posts/' + idPost
     );
-  };
+  }
 }

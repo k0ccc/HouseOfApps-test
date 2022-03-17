@@ -8,14 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  canDeactivate() {
-      if (this.login === "A"){
-        return true;
-      }
-      else{
-        return false;
-      }
-  }
+  
   login: string = 'Admin';
   password: string = '12345';
 
@@ -26,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   loginSubmit() {
-    if (this.password === '12345') {
+    if (this.login === 'Admin' && this.password === '12345') {
       console.log(this.login, this.password);
       localStorage.setItem('auth', 'true');
       this.auth.login();

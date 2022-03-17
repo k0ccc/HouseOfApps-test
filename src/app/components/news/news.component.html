@@ -1,24 +1,31 @@
-<nav>
-    <ul>
-        <li>
-            <button mat-icon-button  [matMenuTriggerFor]="menu" class = nav-button>
-                <mat-icon>more_vert</mat-icon>
-            </button>
-        </li>
-    </ul>
-</nav>
-<div class="main">
-    <input [(ngModel)]="findPost" class="filter" placeholder="Поиск по постам">
-</div>
-<div  *ngFor="let post of posts| findPost:findPost|| ''" class="main">
-    <div class="card-post">
-        <h1>{{post.title}}</h1>
-        <h3>{{post.body}}</h3>
+<div *ngIf="patch; else patchBlock">
+    <nav>
+        <ul>
+            <li>
+                <button mat-mini-fab [matMenuTriggerFor]="menu" class = nav-button>
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <div class="main">
+        <input [(ngModel)]="findPost" class="filter" placeholder="Поиск по постам">
     </div>
-</div>
+    <div  *ngFor="let post of posts| findPost:findPost|| ''; let i = index" class="main">
+        <div class="card-post">
+            <h1>{{post.title}}</h1>
+            <h3>{{post.body}}</h3>
+            <button (click)='patchPost(post.id)' mat-raised-button class="customize">Редактировать</button>
+            <button (click)="deletePost(post.id)" mat-raised-button  class="delete">Удалить</button>
 
-<mat-menu #menu="matMenu">
-    <button (click)="logout()" mat-menu-item>
-        <span>Выход</span>
-    </button>
-</mat-menu>
+        </div>
+    </div>
+    <mat-menu #menu="matMenu">
+        <button (click)="logout()" mat-menu-item>
+            <span>Выход</span>
+        </button>
+    </mat-menu>
+</div>
+<ng-template #patchBlock>
+    <router-outlet></router-outlet>
+</ng-template>

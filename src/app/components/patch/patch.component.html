@@ -1,0 +1,12 @@
+<div style="margin: 240px auto; width: 400px; ">
+    <h1>Редактирование id:{{post.userId}}</h1>
+    <mat-form-field class="form">
+        <input matInput placeholder="title" [(ngModel)]='post.title'>
+    </mat-form-field >
+    <br>
+    <mat-form-field class="form">
+        <textarea  matInput placeholder="body" [(ngModel)]='post.body'> </textarea>
+    </mat-form-field>
+    <button (click)="patch(post.id)"mat-button>Сохранить</button>
+    <button (click)="close()" mat-button>Отмена</button>
+</div>
